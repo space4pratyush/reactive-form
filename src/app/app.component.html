@@ -1,0 +1,61 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" formControlName="firstName">
+    </p>
+
+    <p>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" formControlName="lastName">
+    </p>
+
+    <p>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="email">
+    </p>
+
+    <p>
+        <label for="gender">Gender</label>
+        <input type="radio" value="male" id="gender" name="gender" formControlName="gender">male
+        <input type="radio" value="female" id="gender" name="gender" formControlName="gender">Female
+    </p>
+
+    <p>
+        <label for="isMarried">Married</label>
+        <input type="checkbox" id="isMarried" name="isMarried" formControlName="isMarried">
+    </p>
+
+    <div formGroupName="address">
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" formControlName="city">
+        </div>
+
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" name="street" formControlName="street">
+        </div>
+
+        <div class="form-group">
+            <label for="pincode">Pin Code</label>
+            <input type="text" class="form-control" name="pincode" formControlName="pincode">
+        </div>
+
+        <div class="form-group">
+
+        </div>
+    </div>
+
+    <p>
+        <label for="country">Country</label>
+        <select name="country" id="country" formControlName="country">
+            <option [ngValue]="c.id" *ngFor="let c of countryList">
+                {{c.name}}
+            </option>
+        </select>
+    </p>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
